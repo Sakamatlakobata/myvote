@@ -1,0 +1,30 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}getBill{% endblock %}
+
+
+{% block breadcrumbs %} <!-- see base/app_index.html -->
+    <div class="breadcrumbs">
+        <a href="{% url 'menu_main' %}">Menu</a> &rsaquo;
+        <a>Login</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Login Account</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="Login" id="">
+</form>
+<br><a href="/accounts/register/">Please click here to register a new user</a>
+
+{% endblock %}
+<!-- 
+{% for message in messages%}
+    <p class="messages">{{message}}</p>
+{% endfor %} 
+-->

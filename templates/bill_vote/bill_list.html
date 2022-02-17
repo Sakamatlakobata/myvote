@@ -1,0 +1,24 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}getBill{% endblock %}
+
+
+{% block breadcrumbs %} <!-- see base/app_index.html -->
+    <div class="breadcrumbs">
+        <a href="{% url 'menu_main' %}">Menu</a>     &rsaquo;
+        <a href="{% url 'bill_get' %}">Get Bills</a> &rsaquo;
+        <a>List Bills</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+bill_name :           {{ formdata.bill_name }} <br>
+committee :           {{ formdata.committee }} <br>
+policy_area :         {{ formdata.policy_area }} <br>
+legislative_subject : {{ formdata.legislative_subject }} <br><br>
+
+formdata :            {{ formdata }} <br>
+
+{% endblock %}

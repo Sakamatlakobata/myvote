@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block title %}myVote{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+
+<div id="content-main">
+    <h3>Main Menu</h3> 
+
+    <!-- <div class="app-{{ app.app_label }} module"> -->
+    <div class="module">
+            {% for head, lines in Heading.items %}
+        <table><br>
+            <caption>
+                <a class="section">{{ head }}</a>
+            </caption>
+            {% for line, url in lines.items %}
+            <tr>
+                <th scope="row"><a href="{{ url }}">{{ line }}</a></th>
+                <td><a href="{{ url }}">Goto</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endfor %}        
+    </div>
+
+</div>
+{% endblock %}

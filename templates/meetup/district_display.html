@@ -1,0 +1,76 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}getBill{% endblock %}
+
+
+{% block breadcrumbs %} <!-- see base/app_index.html -->
+    <div class="breadcrumbs">
+        <a href="{% url 'menu_main' %}">Menu</a> &rsaquo;
+        <a href="{% url 'district_get' %}">Enter ZIP code</a> &rsaquo;
+        <a>Member of Congress</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>Member of Congress<br></h1>
+
+    <table>
+        <tr> 
+            <td> First name:      </td>
+            <td> {{ first_name }} </td>
+        </tr>
+        <tr> 
+            <td> Last name:      </td>
+            <td> {{ last_name }} </td>
+        </tr>
+        <tr> 
+            <td> Member ID: </td>
+            <td> <a href={{ bioguide_url }} target="_blank"> {{ bioguide_id }} </a> </td>
+        </tr>
+        <tr> 
+            <td> GovTrack ID: </td>
+            <td> <a href={{ govtrack_url }} target="_blank"> {{ govtrack_id }} </a> </td>
+            <td> <a href=https://www.govtrack.us/ target="_blank"> Tracking the United States Congress </a> </td>
+        </tr>
+        <!-- <tr> 
+            <td> Thomas ID:      </td>
+            <td> {{ thomas_id }} </td>
+            <td> Thomas (Library of Congress) </td>
+        </tr> -->
+        <tr> 
+            <td> Open Secrets ID: </td>
+            <td> <a href={{ opensecrets_url }} target="_blank"> {{ opensecrets_id }} </a> </td>
+            <td> <a href=https://www.opensecrets.org/ target="_blank"> Open Secrets, Follow the money </a> </td>
+        </tr>
+        <tr> 
+            <td> Vote Smart ID: </td>
+            <td> <a href={{ votesmart_url }} target="_blank"> {{ votesmart_id }} </a> </td>
+            <td> <a href=https://justfacts.votesmart.org/ target="_blank"> Vote Smart, Facts Matter </a> </td>
+        </tr>
+        <tr> 
+            <td> Vote View ID: </td>
+            <td> <a href={{ icpsr_url }} target="_blank"> {{ icpsr_id }} </a> </td>
+            <td> <a href=https://voteview.com/ target="_blank"> Vote View </a> </td>
+        </tr>
+        <tr> 
+            <td> Phone:      </td>
+            <td> {{ phone }} </td>
+        </tr>
+        <tr> 
+            <td> ZIP code:     </td>
+            <td> {{ ZIPcode }} </td>
+        </tr>
+    </table>
+
+    <br>{{ error }}
+
+{% endblock %}
+<!-- 
+{% for key, value in jsonResponse.items %}
+    {% if key != 'input' %}
+        {{ key }} : {{ value }} <br>
+    {% endif %}
+{% endfor %} 
+-->

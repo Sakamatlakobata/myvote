@@ -1,0 +1,33 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}getBill{% endblock %}
+
+
+{% block breadcrumbs %} <!-- see base/app_index.html -->
+    <div class="breadcrumbs">
+        <a href="{% url 'menu_main' %}">Menu</a> &rsaquo;
+        <a href="{% url 'district_get' %}">Enter ZIP code</a> &rsaquo;
+        <a>Member of Congress</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Register Account</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {% for field in formUser %}
+            <tr><td>{{field.label}}</td><td>{{field}}</td></tr>
+        {% endfor %}
+        {% for field in formAccount %} <!-- custom user account fields -->
+            <tr><td>{{field.label}}</td><td>{{field}}</td></tr>
+        {% endfor %}
+    </table>
+    <input type="submit" name="Create User" id="">
+    <br>{{ form.errors }}
+</form>
+
+{% endblock %}
