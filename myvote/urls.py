@@ -22,6 +22,7 @@ from myvote                  import views as myvote
 from bill_vote               import views as bill_vote
 from meetup                  import views as meetup
 from accounts                import views as accounts
+from events                  import views as events
 
 
 ''' can also maintain templates/base/base_site.html '''
@@ -43,6 +44,10 @@ urlpatterns = [
     path('accounts/login/',    accounts.loginPage,    name="accounts_login"),
     path('accounts/register/', accounts.registerPage, name="accounts_register"),
     path('accounts/logout/',   accounts.logoutUser,   name="accounts_register"),
+
+    path('events/calendar/',               events.calendar,   name="events_calendar"),
+    path('events/<int:year>/<int:month>/', events.calendate,  name="events_calendar_date"),
+    path('events/event_list/',             events.event_list, name="event_list"),
 
 #    path('', RedirectView.as_view(url='bill_discuss/', permanent=True)),
 

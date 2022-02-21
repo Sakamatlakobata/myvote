@@ -1,0 +1,23 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}calendar{% endblock %}
+
+
+{% block breadcrumbs %} <!-- see base/app_index.html -->
+    <div class="breadcrumbs">
+        <a href="{% url 'menu_main' %}">Menu</a>  &rsaquo;
+        <a href="{% url 'menu_main' %}">Bills</a> &rsaquo;
+        <a>Get Bill</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Basic Site Template</h1><br>
+
+    <h1>{{ title }}</h1>
+    <p>{{ cal }}</p>
+
+{% endblock %}

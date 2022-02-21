@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bill_vote.apps.BillVoteConfig',
     'meetup.apps.MeetupConfig',
     'accounts.apps.AccountsConfig',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [
